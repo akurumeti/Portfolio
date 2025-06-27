@@ -34,11 +34,8 @@ While this is a personal portfolio, if you notice any bugs or have suggestions f
 
 ## 📫 Contact
 
-[Your contact information will be added here]
+[contact information will be added here]
 
-## 📄 License
-
-[Choose and add your preferred license]
 
 ---
 Last Updated: June 2025
