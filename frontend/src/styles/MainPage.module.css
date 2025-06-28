@@ -1,0 +1,299 @@
+.mainBg {
+  min-height: 100vh;
+  color: white;
+  position: relative;
+}
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2rem 3rem 0 0;
+}
+.logoTitle {
+  position: absolute;
+  left: 3rem;
+  top: 2rem;
+}
+.heading {
+  color: #79BAEC;
+  font-family: 'Baumans', cursive;
+  font-size: 3.5rem;
+  margin: 0 0 1rem 0;
+  letter-spacing: 2px;
+  animation: fadeInDown 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  background: linear-gradient(90deg, #79BAEC 30%, #fff 50%, #79BAEC 70%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  animation: shine 2.5s linear infinite, fadeInDown 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.subheading {
+  color: white;
+  font-family: 'Cormorant', serif;
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 1px;
+  animation: shine 2.5s linear infinite, fadeInUp 1.2s 0.3s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  background: linear-gradient(90deg, #fff 30%, #79BAEC 50%, #fff 70%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+.navMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 64px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2.5rem;
+  z-index: 100;
+  background: linear-gradient(90deg, #22577A 30%, #3588c7 50%, #22577A 70%);
+  background-size: 200% auto;
+  animation: shine 4.5s linear infinite;
+  box-shadow: 0 2px 16px 0 rgba(34,87,122,0.10);
+  padding: 0 3rem;
+  border-bottom-left-radius: 18px;
+}
+.navMenu a, .menuItem {
+  color: #fff;
+  font-family: 'Baumans', cursive;
+  font-size: 1.2rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+  position: relative;
+  padding-bottom: 4px;
+}
+.navMenu a::after, .menuItem::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #79BAEC;
+  transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.navMenu a:hover, .menuItem:hover {
+  color: #79BAEC;
+}
+.navMenu a:hover::after, .menuItem:hover::after {
+  width: 100%;
+}
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  gap: 5vw;
+}
+.codingImg {
+  width: 100%;
+  max-width: 480px;
+  min-width: 120px;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  animation: fadeIn 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+  height: auto;
+}
+@media (max-width: 900px) {
+  .heroContainer {
+    flex-direction: column;
+    gap: 2rem;
+    min-height: calc(100vh - 56px - 44px); /* header/footer height */
+    padding-top: 32px;
+    padding-bottom: 32px;
+    justify-content: center;
+  }
+  .leftHero, .rightHero {
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .codingImg {
+    width: 90vw;
+    max-width: 340px;
+    margin-bottom: 1.5rem;
+  }
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .subheading {
+    font-size: 1.1rem;
+  }
+  .navMenu {
+    height: 56px;
+    padding: 0 1rem;
+    gap: 1rem;
+    font-size: 1rem;
+    border-bottom-left-radius: 12px;
+  }
+  .footer {
+    height: 44px;
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    border-top-right-radius: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .heroContainer {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    gap: 1.2rem;
+    min-height: calc(100vh - 40px - 32px);
+  }
+  .codingImg {
+    max-width: 180px;
+    margin-bottom: 1rem;
+  }
+  .heading {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .subheading {
+    font-size: 0.95rem;
+  }
+  .navMenu {
+    height: 40px;
+    font-size: 0.95rem;
+    gap: 0.5rem;
+    padding: 0 0.3rem;
+  }
+  .footer {
+    height: 32px;
+    font-size: 0.8rem;
+    padding: 0 0.3rem;
+  }
+  .navMenu a, .menuItem {
+    font-size: 0.95rem;
+    padding-bottom: 2px;
+  }
+}
+section {
+  margin: 4rem 0 2rem 0;
+}
+section h2 {
+  color: #79BAEC;
+  font-family: 'Baumans', cursive;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.footer {
+  width: 100vw;
+  height: 56px;
+  background: linear-gradient(90deg, #22577A 30%, #3588c7 50%, #22577A 70%);
+  background-size: 200% auto;
+  animation: shine 4.5s linear infinite;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: 'Cormorant', serif;
+  font-size: 1.1rem;
+  padding: 0 3rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top-right-radius: 18px;
+  z-index: 100;
+}
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  color: #79BAEC;
+  animation: blink 1s steps(1) infinite;
+  font-size: inherit;
+  font-family: inherit;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+.menuBar {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 2.2rem;
+  padding-bottom: 1.2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  background: none;
+}
+.menuShiny {
+  font-family: 'Baumans', cursive, sans-serif;
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #79BAEC 30%, #386587 50%, #79BAEC 70%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 700;
+  animation: shine 4.5s linear infinite;
+  transition: color 0.2s;
+  padding: 0 0.2rem;
+  position: relative;
+}
+.menuShiny:hover {
+  filter: brightness(1.2);
+  text-shadow: 0 2px 8px #79BAEC44;
+}
+.menuPipe {
+  color: #79BAEC;
+  font-size: 1.5rem;
+  font-weight: 700;
+  opacity: 0.7;
+  user-select: none;
+}
