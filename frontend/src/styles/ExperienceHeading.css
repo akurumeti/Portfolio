@@ -1,0 +1,19 @@
+.shiny-underline-heading {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.shiny-underline-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%) scaleX(1);
+  width: 80%;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #79BAEC 0%, #1e3c72 100%);
+  box-shadow: 0 0 12px 2px #79BAEC88;
+  opacity: 1;
+}

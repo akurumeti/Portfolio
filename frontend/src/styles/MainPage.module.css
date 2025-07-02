@@ -2,6 +2,7 @@
   min-height: 100vh;
   color: white;
   position: relative;
+  background: transparent; /* Ensure no background color blocks the body bg */
 }
 .header {
   display: flex;
@@ -27,7 +28,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
-  animation: shine 2.5s linear infinite, fadeInDown 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: shine 2.5s linear infinite, fadeInDown 1.2s cubic-bezier(0.50, 1, 0.32, 1);
 }
 .subheading {
   color: white;

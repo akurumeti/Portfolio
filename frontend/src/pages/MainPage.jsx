@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Experience from "./Experience";
-import Skills from "./Skills";
 import Projects from "./Projects";
 import Education from "./Education";
 import Footer from "./Footer";
 import "../App.css";
 import styles from "../styles/MainPage.module.css";
 import mainPageImg from "../assets/main-page-img.png";
+import SkillsSection from "./SkillsSection";
 
 const menuVariants = {
   hidden: { opacity: 0, y: -30 },
@@ -86,6 +86,14 @@ const MainPage = () => {
           </motion.h2>
         </div>
       </motion.div>
+      {/* Experience Section */}
+      <section id="experience">
+        <Experience />
+      </section>
+
+      <section id="skills">
+        <SkillsSection />
+      </section>
       <Footer />
     </div>
   );
