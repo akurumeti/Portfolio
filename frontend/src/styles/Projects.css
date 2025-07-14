@@ -24,6 +24,16 @@
   transition: transform 0.5s cubic-bezier(.77,0,.18,1);
 }
 
+.projects-carousel-track-multi {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 32px;
+  min-width: 0;
+  max-width: 1100px;
+  transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+}
+
 .project-card-glass {
   background: rgba(30, 60, 120, 0.13);
   border-radius: 24px;
@@ -50,6 +60,14 @@
   border-top-right-radius: 24px;
 }
 
+.project-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 18px 18px 0 18px;
+}
+
 .project-card-content {
   padding: 18px 18px 16px 18px;
   display: flex;
@@ -62,26 +80,416 @@
   font-weight: 700;
   color: #1e3c78;
   margin: 0 0 4px 0;
+  flex: 1;
+}
+
+.project-card-links {
+  display: flex;
+  gap: 8px;
+}
+.project-link-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 2px 8px #79BAEC33);
+  transition: transform 0.2s;
+}
+.project-link-icon:hover {
+  transform: scale(1.15) rotate(-8deg);
+}
+
+.project-card-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 18px 0 18px;
+}
+.project-tech-chip {
+  background: linear-gradient(135deg, #79BAEC 60%, #1e3c78 100%);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 4px 12px;
+  box-shadow: 0 2px 8px #79BAEC22;
+  letter-spacing: 0.5px;
 }
 
 .project-card-desc {
-  font-size: 1rem;
-  color: #333;
-  margin: 0 0 8px 0;
-}
-
-.project-card-link {
-  color: #79BAEC;
-  font-weight: 600;
-  text-decoration: none;
-  margin-top: 4px;
-  transition: color 0.2s;
-}
-.project-card-link:hover {
+  padding: 12px 22px 18px 22px;
+  margin: 0;
   color: #1e3c78;
-  text-decoration: underline;
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+  list-style: disc inside;
 }
 
+/* Flip Card/3D Rotating Card Styles for Projects */
+.projects-flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto 48px auto;
+  padding: 0 8px;
+}
+
+.project-flip-card-container {
+  perspective: 1200px;
+  width: 100%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-flip-card {
+  width: 100%;
+  max-width: 320px;
+  height: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+  cursor: pointer;
+}
+.project-flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.project-flip-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 60, 120, 0.13);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 #79BAEC44, 0 2px 8px #1e3c7822;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  overflow: hidden;
+  padding: 24px 18px 18px 18px;
+}
+.project-flip-face.front {
+  z-index: 2;
+  background: rgba(30, 60, 120, 0.13);
+}
+.project-flip-face.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #eaf6ff 0%, #f7fbff 100%);
+  z-index: 1;
+}
+
+.project-flip-face .project-card-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #1e3c78;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.project-flip-face .project-card-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.project-flip-face .project-card-links {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.project-flip-face .project-card-desc {
+  color: #1e3c78;
+  font-size: 1rem;
+  text-align: left;
+  margin: 0;
+  padding-left: 8px;
+  list-style: disc inside;
+}
+
+/* Interactive Bookshelf/Shelf Styles for Projects */
+.projects-shelf {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 24px;
+  padding: 48px 0 32px 0;
+  min-height: 340px;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto 48px auto;
+}
+
+.project-book {
+  position: relative;
+  width: 60px;
+  height: 220px;
+  background: linear-gradient(120deg, #79BAEC 60%, #1e3c78 100%);
+  border-radius: 8px 8px 16px 16px;
+  box-shadow: 0 8px 32px 0 #79BAEC44, 0 2px 8px #1e3c7822;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(.77,0,.18,1), box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  z-index: 1;
+  outline: none;
+}
+.project-book:hover, .project-book:focus {
+  box-shadow: 0 16px 48px 0 #79BAEC88, 0 2px 8px #1e3c7822;
+  transform: translateY(-12px) scale(1.04);
+  z-index: 2;
+}
+.project-book.active {
+  width: 320px;
+  min-width: 220px;
+  max-width: 98vw;
+  transform: translateY(-32px) scale(1.08) rotate(-2deg);
+  box-shadow: 0 24px 64px 0 #79BAECcc, 0 2px 8px #1e3c7822;
+  z-index: 10;
+}
+
+.project-book-spine {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 18px 0 0 0;
+  flex: 1;
+  user-select: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.project-book.active .project-book-spine {
+  opacity: 0.2;
+}
+
+.project-book-cover {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 40px;
+  background: linear-gradient(120deg, #eaf6ff 60%, #79BAEC 100%);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 2px 8px #79BAEC22;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1e3c78;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 0 4px 8px 4px;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+.project-book.active .project-book-cover {
+  opacity: 0.1;
+}
+
+.project-book-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: block;
+}
+
+.project-book-details {
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  background: linear-gradient(135deg, #eaf6ff 0%, #f7fbff 100%);
+  border-radius: 12px 12px 18px 18px;
+  box-shadow: 0 8px 40px 0 #79BAEC55;
+  padding: 28px 18px 18px 18px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  animation: bookPopIn 0.35s cubic-bezier(.77,0,.18,1);
+}
+@keyframes bookPopIn {
+  from { opacity: 0; transform: scale(0.92) translateY(40px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.project-book-details .project-card-links {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.project-book-details .project-card-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.project-book-details .project-card-desc {
+  color: #1e3c78;
+  font-size: 1rem;
+  text-align: left;
+  margin: 0;
+  padding-left: 8px;
+  list-style: disc inside;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+/* Carousel Bookshelf with Animated Book Opening */
+.carousel-bookshelf-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  margin: 0 auto 48px auto;
+  position: relative;
+}
+.carousel-arrow {
+  background: linear-gradient(135deg, #79BAEC 60%, #1e3c78 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  box-shadow: 0 2px 12px #79BAEC44;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 10;
+  margin: 0 18px;
+}
+.carousel-arrow:hover {
+  background: linear-gradient(135deg, #1e3c78 60%, #79BAEC 100%);
+  transform: scale(1.12);
+}
+
+.carousel-bookshelf {
+  display: flex;
+  align-items: flex-end;
+  gap: 48px;
+  min-height: 320px;
+  position: relative;
+}
+.book3d-container {
+  perspective: 2000px;
+  width: 480px;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+}
+.book3d {
+  width: 420px;
+  height: 480px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.book3d-cover {
+  width: 420px;
+  height: 480px;
+  background: linear-gradient(120deg, #79BAEC 60%, #1e3c78 100%);
+  border-radius: 8px 8px 18px 18px;
+  box-shadow: 0 8px 32px 0 #79BAEC44, 0 2px 8px #1e3c7822;
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.8s cubic-bezier(.77,0,.18,1), box-shadow 0.3s;
+  transform-origin: left center;
+  backface-visibility: hidden;
+}
+.book3d-cover.open {
+  transform: rotateY(-120deg);
+  box-shadow: none;
+}
+.book3d-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
+  padding: 0 12px;
+  user-select: none;
+  text-shadow: 0 2px 8px #1e3c7844;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.book3d-page {
+  width: 420px;
+  height: 480px;
+  background: linear-gradient(135deg, #eaf6ff 0%, #f7fbff 100%);
+  border-radius: 8px 8px 18px 18px;
+  box-shadow: 0 8px 40px 0 #79BAEC55;
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.98) translateX(18px);
+  transition: opacity 0.5s, transform 0.8s cubic-bezier(.77,0,.18,1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 28px 18px 18px 18px;
+}
+.book3d-page.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) translateX(0);
+  animation: bookPagePopIn 0.5s cubic-bezier(.77,0,.18,1);
+}
+@keyframes bookPagePopIn {
+  from { opacity: 0; transform: scale(0.92) translateX(40px); }
+  to { opacity: 1; transform: scale(1) translateX(0); }
+}
+.book3d-content .project-card-links {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.book3d-content .project-card-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.book3d-content .project-card-desc {
+  color: #1e3c78;
+  font-size: 1rem;
+  text-align: left;
+  margin: 0;
+  padding-left: 8px;
+  list-style: disc inside;
+  max-height: 320px;
+  overflow-y: auto;
+}
 @media (max-width: 1100px) {
   .projects-carousel-track {
     min-width: 400px;
@@ -105,5 +513,119 @@
   }
   .project-card-img {
     height: 110px;
+  }
+  .projects-flip-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 2vw;
+  }
+  .project-flip-card-container {
+    height: 180px;
+  }
+  .project-flip-card {
+    max-width: 98vw;
+    height: 180px;
+  }
+}
+@media (max-width: 900px) {
+  .projects-shelf {
+    gap: 10px;
+    padding: 32px 0 18px 0;
+  }
+  .project-book {
+    height: 140px;
+    width: 38px;
+  }
+  .project-book.active {
+    width: 98vw;
+    min-width: 0;
+    height: 220px;
+  }
+  .carousel-bookshelf {
+    gap: 10px;
+    min-height: 240px;
+  }
+  .carousel-book {
+    height: 140px;
+    width: 60px;
+  }
+  .carousel-book.open {
+    width: 98vw;
+    min-width: 0;
+    height: 180px;
+  }
+}
+@media (max-width: 600px) {
+  .projects-shelf {
+    gap: 4px;
+    padding: 18px 0 8px 0;
+  }
+  .project-book {
+    height: 90px;
+    width: 22px;
+  }
+  .project-book.active {
+    width: 98vw;
+    min-width: 0;
+    height: 160px;
+  }
+  .project-book-details {
+    padding: 12px 2vw 12px 2vw;
+  }
+  .carousel-bookshelf {
+    gap: 4px;
+    min-height: 120px;
+  }
+  .carousel-book {
+    height: 90px;
+    width: 32px;
+  }
+  .carousel-book.open {
+    width: 98vw;
+    min-width: 0;
+    height: 120px;
+  }
+  .carousel-book-page {
+    padding: 12px 2vw 12px 2vw;
+  }
+}
+@media (max-width: 900px) {
+  .carousel-bookshelf {
+    gap: 10px;
+    min-height: 240px;
+  }
+  .book3d-container {
+    width: 260px;
+    height: 320px;
+  }
+  .book3d, .book3d-cover, .book3d_page {
+    width: 220px;
+    height: 280px;
+  }
+  .book3d-title {
+    font-size: 1.2rem;
+  }
+  .book3d-content .project-card-desc {
+    max-height: 120px;
+  }
+}
+@media (max-width: 600px) {
+  .carousel-bookshelf {
+    gap: 4px;
+    min-height: 120px;
+  }
+  .book3d-container {
+    width: 120px;
+    height: 120px;
+  }
+  .book3d, .book3d-cover, .book3d_page {
+    width: 100px;
+    height: 100px;
+  }
+  .book3d-title {
+    font-size: 0.85rem;
+  }
+  .book3d-page {
+    padding: 8px 2vw 8px 2vw;
   }
 }

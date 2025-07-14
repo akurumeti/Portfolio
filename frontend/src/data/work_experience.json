@@ -1,0 +1,32 @@
+[
+  {
+    "year": "2021",
+    "month": "April",
+    "role": "Application Developer",
+    "company": "Eficens Systems INC",
+    "location": "Atlanta, GA",
+    "description": [
+      "Streamlined testing processes by integrating MySQL into a Spring Boot application for storing test metrics, enabling detailed analysis and faster troubleshooting.",
+      "Incorporated Gradle framework to optimize development, build, and dependency management, achieving a 30% reduction in development time.",
+      "Implemented asynchronous task delegation using Spring, resulting in a 5% boost in application speed.",
+      "Designed and implemented a MySQL database using MariaDB, leveraged Redis Cache in Docker, and used Elasticsearch for faster search operations.",
+      "Enhanced application robustness by fixing vulnerabilities and duplicate code identified via SonarQube, reaching over 90% code coverage.",
+      "Built an automated pipeline to convert Excel payroll data into structured databases and JSON using Apache POI and Java, enabling web-based visualization and filter-based search."
+    ]
+  },
+  {
+    "year": "2016",
+    "month": "December",
+    "endDate": "September 2019",
+    "role": "Specialist Programmer",
+    "company": "Infosys Private Ltd.",
+    "location": "Bengaluru, KA",
+    "description": [
+      "Trained extensively in Java, SQL, NoSQL, Spring Boot, Scala, and Akka for 6–8 months as a Systems Trainee.",
+      "Developed applications to manage and transmit service data to client apps using RESTful Web services built with Java and Spring.",
+      "Designed and integrated REST APIs for a retail application and interfaced backend systems with Oracle SQL databases.",
+      "Engineered caching solutions using Spring to improve query performance and reduce response time by 30%.",
+      "Conducted code quality assessments using JUnit and Jacoco reports, achieving 90% test coverage across modules."
+    ]
+  }
+]

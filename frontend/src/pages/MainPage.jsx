@@ -94,6 +94,9 @@ const MainPage = () => {
       <section id="skills">
         <SkillsSection />
       </section>
+      <section id="projects">
+        <Projects />
+      </section>
       <Footer />
     </div>
   );

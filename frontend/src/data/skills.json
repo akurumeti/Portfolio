@@ -1,0 +1,73 @@
+{
+  "categories": [
+    {
+      "name": "Backend Development",
+      "skills": [
+        "Java",
+        "Groovy",
+        "Scala",
+        "Spring Boot",
+        "Spring MVC",
+        "Hibernate",
+        "JDBC",
+        "Node.js",
+        "RESTful APIs"
+      ]
+    },
+    {
+      "name": "Database & Cloud",
+      "skills": [
+        "Oracle PL/SQL",
+        "MySQL",
+        "MongoDB",
+        "Cassandra",
+        "Redis",
+        "MariaDB",
+        "Elasticsearch",
+        "Database Design"
+      ]
+    },
+    {
+      "name": "DevOps & Tools",
+      "skills": [
+        "Docker",
+        "Kubernetes",
+        "Gradle",
+        "SonarQube",
+        "Apache POI",
+        "JUnit",
+        "Jacoco",
+        "Git"
+      ]
+    },
+    {
+      "name": "Programming Languages",
+      "skills": [
+        "Java",
+        "Groovy",
+        "Python",
+        "Scala",
+        "C++",
+        "C"
+      ]
+    },
+    {
+      "name": "Other Technical Skills",
+      "skills": [
+        "Signal Processing",
+        "Voice Activity Detection",
+        "Android Development",
+        "Fitbit SDK",
+        "System Design"
+      ]
+    },
+    {
+      "name": "Soft Skills & Methodologies",
+      "skills": [
+        "Agile Development",
+        "Code Quality Analysis",
+        "Test Automation"
+      ]
+    }
+  ]
+}

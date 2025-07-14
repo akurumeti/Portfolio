@@ -1,0 +1,34 @@
+{
+  "projects": [
+    {
+      "title": "SOS Emergency App",
+      "technologies": ["Fitbit Studio", "JavaScript", "Node.js", "GPS", "Versa 3"],
+      "description": [
+        "Developed and launched an SOS emergency feature on Fitbit that instantly notifies preset contacts with real-time user coordinates using GPS in 1 to 1.5 seconds.",
+        "Created a location-tracking feature for Versa 3 using JavaScript in Fitbit Studio, interfacing with a Node.js backend.",
+        "Designed and deployed a Node.js server to process data and trigger emergency alerts to predefined contacts."
+      ],
+      "links": {}
+    },
+    {
+      "title": "Speech Processing and Analysis",
+      "technologies": ["Python", "Deep Neural Networks", "Signal Processing"],
+      "description": [
+        "Built a Deep Neural Network classifier to analyze speech data for Gender Identification (78%) and Speaker Recognition (45%).",
+        "Implemented a real-time voice activity detection system with signal processing techniques to reduce false detections by 25%.",
+        "Enhanced speech recognition by 30% through feature extraction and noise reduction algorithms."
+      ],
+      "links": {}
+    },
+    {
+      "title": "Anduno Sense - Wireless Sensor Hub",
+      "technologies": ["Arduino", "Java", "Bluetooth", "AGPS", "Android"],
+      "description": [
+        "Automated control of electronic components via Android app using Bluetooth, light sensors, and AGPS on an Arduino board.",
+        "Developed a wireless sensor hub (Anduno Sense) with real-time control through an Android application.",
+        "Created a user-friendly app compatible with Android OS 2.2+ for managing connected sensors."
+      ],
+      "links": {}
+    }
+  ]
+}
