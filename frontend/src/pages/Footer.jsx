@@ -22,7 +22,7 @@ const Footer = () => (
         <a href="https://www.linkedin.com/in/anurag-kurumeti/" target="_blank" rel="noopener noreferrer" style={{marginRight: 8}}>
           <FaLinkedin style={iconStyle} />
         </a>
-        <a href="mailto:your@email.com" style={{marginRight: 0}}>
+        <a href="mailto:akurumeti@gmail.com" style={{marginRight: 0}}>
           <FaEnvelope style={iconStyle} />
         </a>
       </div>
