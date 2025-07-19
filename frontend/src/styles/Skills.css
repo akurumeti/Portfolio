@@ -33,7 +33,7 @@
 }
 
 .skills-circle-title {
-  font-size: 1.2rem;
+  font-size: 0.1rem;
   font-weight: 600;
   color: #fefeff;
   margin-bottom: 12px;
@@ -115,16 +115,18 @@
 }
 
 .skill-label.skill-label-circle {
-  font-size: 0.82rem;
+  font-size: 100px;
   color: #ffffff;
   text-align: center;
-  font-weight: 500;
+  font-weight: 100;
   margin-top: 2px;
-  width: 100%;
+  width: 110%;
   display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal; 
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 200px;
+  line-height: 1.2;
 }
 
 .skills-circular-center-glow {

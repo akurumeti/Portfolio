@@ -1,9 +1,33 @@
 import React from "react";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import styles from "../styles/MainPage.module.css";
+
+const iconStyle = {
+  width: 28,
+  height: 28,
+  marginRight: 18,
+  verticalAlign: "middle",
+  color: "#ffffff",
+  cursor: "pointer",
+  transition: "color 0.2s"
+};
 
 const Footer = () => (
   <footer className={styles.footer}>
-    © 2025 All rights reserved.
+    <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%", position: "relative"}}>
+      <div style={{position: "absolute", left: "50%", transform: "translateX(-50%)", display: "flex", alignItems: "center"}}>
+        <a href="https://github.com/akurumeti" target="_blank" rel="noopener noreferrer" style={{marginRight: 8}}>
+          <FaGithub style={iconStyle} />
+        </a>
+        <a href="https://www.linkedin.com/in/anurag-kurumeti/" target="_blank" rel="noopener noreferrer" style={{marginRight: 8}}>
+          <FaLinkedin style={iconStyle} />
+        </a>
+        <a href="mailto:your@email.com" style={{marginRight: 0}}>
+          <FaEnvelope style={iconStyle} />
+        </a>
+      </div>
+      <span style={{marginLeft: "auto"}}>© 2025 All rights reserved.</span>
+    </div>
   </footer>
 );
 

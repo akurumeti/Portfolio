@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import "../App.css";
 import styles from "../styles/MainPage.module.css";
 import mainPageImg from "../assets/main-page-img.png";
-import SkillsSection from "./SkillsSection";
+import Skills from "./Skills";
 
 const menuVariants = {
   hidden: { opacity: 0, y: -30 },
@@ -92,10 +92,13 @@ const MainPage = () => {
       </section>
 
       <section id="skills">
-        <SkillsSection />
+        <Skills />
       </section>
       <section id="projects">
         <Projects />
+      </section>
+      <section id="education">
+        <Education />
       </section>
       <Footer />
     </div>

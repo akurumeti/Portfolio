@@ -106,10 +106,10 @@
 .project-tech-chip {
   background: linear-gradient(135deg, #79BAEC 60%, #1e3c78 100%);
   color: #fff;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   font-weight: 600;
   border-radius: 12px;
-  padding: 4px 12px;
+  padding: 3px 10px;
   box-shadow: 0 2px 8px #79BAEC22;
   letter-spacing: 0.5px;
 }
@@ -490,6 +490,113 @@
   max-height: 320px;
   overflow-y: auto;
 }
+
+/* Accordion Styles for Projects */
+.projects-accordion {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 48px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+.accordion-item {
+  background: linear-gradient(135deg, #eaf6ff 0%, #f7fbff 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 #79BAEC33;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  border: 2px solid #79BAEC22;
+}
+.accordion-item.open {
+  box-shadow: 0 8px 32px 0 #79BAEC66;
+  border-color: #79BAEC;
+}
+.accordion-header {
+  width: 100%;
+  background: linear-gradient(90deg, #79BAEC 60%, #1e3c78 100%);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 32px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+.accordion-header:hover, .accordion-header:focus {
+  background: linear-gradient(90deg, #1e3c78 60%, #79BAEC 100%);
+}
+.accordion-title-skills {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+}
+.accordion-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 2px 8px #1e3c7844;
+}
+.accordion-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.accordion-arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 18px;
+  transition: transform 0.3s;
+}
+.accordion-item.open .accordion-arrow {
+  transform: rotate(180deg);
+}
+.accordion-content {
+  background: linear-gradient(135deg, #eaf6ff 0%, #f7fbff 100%);
+  color: #1e3c78;
+  font-size: 1rem;
+  padding: 0 32px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.6s cubic-bezier(.77,0,.18,1), padding 0.3s;
+}
+.accordion-item.open .accordion-content {
+  padding: 18px 32px 28px 32px;
+  max-height: 500px;
+  animation: accordionFadeIn 0.5s cubic-bezier(.77,0,.18,1);
+}
+@keyframes accordionFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .projects-accordion {
+    max-width: 98vw;
+    gap: 12px;
+  }
+  .accordion-header {
+    font-size: 1rem;
+    padding: 14px 12px;
+  }
+  .accordion-content {
+    padding: 0 12px;
+  }
+  .accordion-item.open .accordion-content {
+    padding: 12px 12px 18px 12px;
+  }
+}
+
 @media (max-width: 1100px) {
   .projects-carousel-track {
     min-width: 400px;
@@ -628,4 +735,8 @@
   .book3d-page {
     padding: 8px 2vw 8px 2vw;
   }
+}
+
+.projects-section, .projects-accordion, .accordion-title, .project-tech-chip, .project-card-desc, .accordion-header, .accordion-arrow {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }

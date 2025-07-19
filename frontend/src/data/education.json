@@ -4,17 +4,13 @@
       "school": "University of Colorado Denver",
       "location": "Denver, CO, USA",
       "degree": "Master of Science (M.S.) in Computer Science",
-      "duration": "2021",
-      "gpa": null,
-      "imagePath": "ms-diploma.png"
+      "duration": "2021"
     },
     {
       "school": "Sreenidhi Institute of Science & Technology",
       "location": "Hyderabad, Telangana, India",
       "degree": "Bachelor of Technology (B.Tech.) in Electronics and Computer Engineering",
-      "duration": "2016",
-      "gpa": null,
-      "imagePath": "btech-pc.jpg"
+      "duration": "2016"
     }
   ]
 }

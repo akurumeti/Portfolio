@@ -1,17 +1,19 @@
 [
   {
-    "year": "2021",
+    "year": "2022",
     "month": "April",
-    "role": "Application Developer",
-    "company": "Eficens Systems INC",
+    "endDate": "Present",
+
+    "role": "Senior Application Developer",
+    "company": "ADP",
     "location": "Atlanta, GA",
     "description": [
-      "Streamlined testing processes by integrating MySQL into a Spring Boot application for storing test metrics, enabling detailed analysis and faster troubleshooting.",
-      "Incorporated Gradle framework to optimize development, build, and dependency management, achieving a 30% reduction in development time.",
-      "Implemented asynchronous task delegation using Spring, resulting in a 5% boost in application speed.",
-      "Designed and implemented a MySQL database using MariaDB, leveraged Redis Cache in Docker, and used Elasticsearch for faster search operations.",
-      "Enhanced application robustness by fixing vulnerabilities and duplicate code identified via SonarQube, reaching over 90% code coverage.",
-      "Built an automated pipeline to convert Excel payroll data into structured databases and JSON using Apache POI and Java, enabling web-based visualization and filter-based search."
+      "Streamlined testing processes by integrating MySQL for test metrics storage within a Spring Boot application, enabling detailed data analysis and faster troubleshooting.",
+      "Incorporated Gradle framework to streamline development, build, and dependency management, achieving a 30% reduction in development time.",
+      "Implemented Spring-based asynchronous communication to optimize task delegation, realizing a 5% boost in application speed.",
+      "Designed and implemented a MySQL database using MariaDB for efficient storage and retrieval of application data, leveraged Redis Cache within the Docker environment to enhance data fetching speeds, and utilized Elasticsearch for faster search operations.",
+      "Enhanced application robustness by resolving code vulnerabilities and duplicates identified through SonarQube, achieving a significant uplift in code stability with over 90% coverage.",
+      "Designed an automated pipeline to convert Excel Workbook payroll data into structured relational databases and JSON formats using Apache POI and Java, improving web-based data visualization and allowing the end user to search and filter the captured data based on the set of filters available."
     ]
   },
   {
@@ -22,11 +24,13 @@
     "company": "Infosys Private Ltd.",
     "location": "Bengaluru, KA",
     "description": [
-      "Trained extensively in Java, SQL, NoSQL, Spring Boot, Scala, and Akka for 6–8 months as a Systems Trainee.",
-      "Developed applications to manage and transmit service data to client apps using RESTful Web services built with Java and Spring.",
-      "Designed and integrated REST APIs for a retail application and interfaced backend systems with Oracle SQL databases.",
-      "Engineered caching solutions using Spring to improve query performance and reduce response time by 30%.",
-      "Conducted code quality assessments using JUnit and Jacoco reports, achieving 90% test coverage across modules."
+      "Trained intensively in Java, SQL, NoSQL, Spring & Spring Boot Architectures, and Scala & Akka Framework for a period of 6 to 8 months as a Systems Trainee.",
+      "Developed an application to manage data received from various services and transmit to client apps via RESTful Web services using Java and the Spring framework, enhancing system robustness.",
+      "Designed and Integrated REST APIs for the CMA retail application.",
+      "Developed robust backend systems interfacing with various micro-services and the Oracle SQL database, leading to increased operational efficiency.",
+      "Engineered caching solutions using Spring to optimize database query performance and enhance application speed, reducing response time by 30%.",
+      "Conducted code quality assessments with JUnit and Jacoco reports, achieving 90% test coverage across all modules.",
+      "Developed and implemented robust RESTful APIs reducing load times by 30% using Java, Spring Boot Architecture, enhancing system performance and enabling smooth data integration across multiple platforms for over 1 million users monthly."
     ]
   }
 ]

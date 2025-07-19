@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaCheckCircle } from "react-icons/fa";
 import expData from "../data/work_experience.json";
 import "../styles/ExperienceHeading.css";
 
@@ -15,10 +16,28 @@ const Experience = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
       <h2 className="shiny-underline-heading" style={{ textAlign: "center", margin: 0, marginBottom: 32, fontSize: 40 }}>Experience</h2>
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", minHeight: 400, width: "100%", position: "relative" }}>
+      <div style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "flex-start",
+        minHeight: 400,
+        width: "100%",
+        position: "relative",
+        flexDirection: window.innerWidth <= 600 ? "column" : "row",
+        gap: window.innerWidth <= 600 ? 0 : undefined
+      }}>
         {/* Metro Line */}
-        <div style={{ position: "relative", width: 60, minHeight: 400, display: "flex", flexDirection: "column", alignItems: "center", marginRight: 24, marginTop: 0 }}>
-          <div style={{ position: "absolute", top: 24, left: 28, width: 4, height: `calc(100% - 48px)`, background: `linear-gradient(${lineColor} 60%, #1e3c72 100%)`, borderRadius: 2, zIndex: 0 }}></div>
+        <div style={{
+          position: "relative",
+          width: window.innerWidth <= 600 ? 40 : 60,
+          minHeight: 24 + 48 * expData.slice(0, visibleCount).length,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginRight: window.innerWidth <= 600 ? 0 : 200,
+          marginTop: 0
+        }}>
+          <div style={{ position: "absolute", top: 40, left: 28, width: 4, height: `${48 * (expData.slice(0, visibleCount).length - 1)}px`, background: `linear-gradient(${lineColor} 60%, #1e3c72 100%)`, borderRadius: 2, zIndex: 0 }}></div>
           {expData.slice(0, visibleCount).map((exp, i) => (
             <motion.div
               key={i}
@@ -72,7 +91,7 @@ const Experience = () => {
           )}
         </div>
         {/* Experience Card */}
-        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", marginLeft: 'auto', maxWidth: 600, marginTop: 48 }}>
+        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", marginLeft: 0, maxWidth: 900, marginTop: 30 }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
@@ -87,7 +106,7 @@ const Experience = () => {
                 padding: "1.5rem 2rem",
                 color: "#fff",
                 margin: "0 0 2rem auto",
-                maxWidth: 500,
+                maxWidth: 900,
                 width: "100%",
                 textAlign: "left",
                 alignItems: "flex-start",
@@ -115,9 +134,12 @@ const Experience = () => {
                 <span role="img" aria-label="calendar">📅</span> {expData[active].month} {expData[active].year}{expData[active].endDate ? ` - ${expData[active].endDate}` : ""}
                 <span role="img" aria-label="location">📍</span> {expData[active].location}
               </div>
-              <ul style={{ paddingLeft: 18, margin: 0, color: "#f5faff", fontSize: 16, textAlign: "left", width: "100%" }}>
+              <ul style={{ paddingLeft: 0, margin: 0, color: "#f5faff", fontSize: 16, textAlign: "left", width: "100%", listStyle: "none" }}>
                 {expData[active].description.map((desc, idx) => (
-                  <li key={idx}>{desc}</li>
+                  <li key={idx} style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
+                    <FaCheckCircle style={{ color: lineColor, marginRight: 10, fontSize: 16, flexShrink: 0 }} />
+                    <span style={{ fontSize: 16 }}>{desc}</span>
+                  </li>
                 ))}
               </ul>
             </motion.div>
