@@ -1,6 +1,11 @@
 body, html, button, a, .menuItem, .shiny-underline-heading, .footer, .navMenu, .menuBar, .cursor {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><polygon points="2,2 30,16 18,18 16,30" fill="%2379BAEC"/></svg>') 2 2, auto;
 }
+body, html {
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 .mainBg {
   min-height: 100vh;
   color: white;
@@ -8,6 +13,11 @@ body, html, button, a, .menuItem, .shiny-underline-heading, .footer, .navMenu, .
   background: transparent; /* Ensure no background color blocks the body bg */
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 0 1.5rem;
 }
 .header {
   display: flex;
@@ -141,11 +151,31 @@ body, html, button, a, .menuItem, .shiny-underline-heading, .footer, .navMenu, .
     font-weight: 300;
   }
   .navMenu {
-    height: 56px;
-    padding: 0 1rem;
-    gap: 1rem;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    gap: 0.5rem;
     font-size: 1rem;
-    border-bottom-left-radius: 12px;
+    padding: 0 0.2rem;
+    height: 44px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .navMenu::-webkit-scrollbar {
+    display: none;
+  }
+  .navMenu a, .menuItem {
+    font-size: 1rem;
+    padding-bottom: 2px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
   .footer {
     width: 100%;
@@ -159,64 +189,80 @@ body, html, button, a, .menuItem, .shiny-underline-heading, .footer, .navMenu, .
   }
   section {
     margin: 2rem 0 1rem 0;
-    padding: 0 0.2rem;
+    padding: 1rem 0.2rem;
+    max-width: 98vw;
   }
 }
 @media (max-width: 600px) {
+  .navMenu {
+    width: 100vw;
+    min-width: 0;
+    max-width: 100vw;
+    overflow-x: auto;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    padding: 0 0.1rem;
+    height: 38px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .navMenu::-webkit-scrollbar {
+    display: none;
+  }
+  .navMenu a, .menuItem {
+    font-size: 0.9rem;
+    padding-bottom: 2px;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
   .mainBg {
-    padding: 0 0.2rem;
+    padding: 0 0.1rem;
   }
-  .heroContainer {
-    flex-direction: column;
-    gap: 1rem;
-    min-height: calc(100vh - 40px - 32px);
-    padding-top: 12px;
-    padding-bottom: 12px;
+  section {
+    margin: 0.8rem 0 0.3rem 0;
+    padding: 0.5rem 0.05rem;
+    max-width: 100vw;
   }
-  .codingImg {
-    max-width: 180px;
-    margin-bottom: 1rem;
+  .footer {
+    font-size: 0.7rem;
+    height: 30px;
+    padding: 0 0.05rem;
   }
   .heading {
     font-size: 1.1rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
     text-align: center;
   }
   .subheading {
     font-size: 0.85rem;
     text-align: center;
   }
-  section {
-    margin: 1.2rem 0 0.5rem 0;
-    padding: 0 0.1rem;
-  }
-  .navMenu {
-    height: 40px;
-    font-size: 0.95rem;
-    gap: 0.5rem;
-    padding: 0 0.3rem;
-  }
-  .footer {
-    font-size: 0.7rem;
-    height: 32px;
-    padding: 0 0.1rem;
-  }
 }
 @media (max-width: 400px) {
-  .heading {
-    font-size: 0.9rem;
-  }
-  .subheading {
-    font-size: 0.7rem;
-  }
   .footer {
     font-size: 0.6rem;
-    height: 28px;
-    padding: 0 0.05rem;
+    height: 24px;
+    padding: 0 0.01rem;
+  }
+  .heading {
+    font-size: 0.8rem;
+  }
+  .subheading {
+    font-size: 0.6rem;
   }
 }
 section {
-  margin: 4rem 0 2rem 0;
+  margin: 3rem 0 2rem 0;
+  padding: 1.5rem 0.5rem;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 section h2 {
   color: #79BAEC;
@@ -328,4 +374,49 @@ section h2 {
   font-weight: 700;
   opacity: 0.7;
   user-select: none;
+}
+
+/* --- FOOTER: Stack icons and copyright on mobile --- */
+@media (max-width: 600px) {
+  .footer > div {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.3rem !important;
+    padding: 0.2rem 0 !important;
+  }
+  .footer span {
+    margin-left: 0 !important;
+    margin-top: 0.2rem !important;
+    text-align: center !important;
+    width: 100%;
+    display: block;
+    font-size: 0.7rem;
+  }
+}
+
+/* --- SKILLS SECTION: Responsive circles and badges --- */
+@media (max-width: 900px) {
+  .skills-section-circles, .skills-categories-circles-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 0.5rem 0.2rem !important;
+    gap: 0.7rem !important;
+    box-sizing: border-box;
+  }
+  .skills-badges-row, .skills-badges {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.4rem !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+  .skill-badge {
+    min-width: 80px !important;
+    max-width: 98vw !important;
+    font-size: 0.9rem !important;
+    margin: 0.2rem !important;
+  }
 }
