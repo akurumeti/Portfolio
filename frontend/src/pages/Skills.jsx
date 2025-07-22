@@ -31,19 +31,23 @@ const skillIcons = {
 
 function SkillsCircle({ skills, category }) {
   const count = skills.length;
-  const circleSize = 420; // px, increased size
-  const iconBox = 80; // px, increased icon size
+  // Responsive sizing for mobile
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 600;
+  const circleSize = isMobile ? window.innerWidth * 0.72 : 420;
+  const iconBox = isMobile ? 32 : 80;
+  const labelFont = isMobile ? 17 : 20;
+  const labelMaxWidth = isMobile ? 40 : 110;
   const center = circleSize / 2;
   // Dynamic radius: more skills = larger radius, fewer = smaller
-  const minRadius = 140;
-  const maxRadius = center - iconBox / 2 - 12;
+  const minRadius = isMobile ? 18 : 140;
+  const maxRadius = center - iconBox / 2 - 8;
   const dynamicRadius = Math.max(
     minRadius,
-    Math.min(maxRadius, center - iconBox / 2 - 12 - (count < 6 ? 24 : 0))
+    Math.min(maxRadius, center - iconBox / 2 - 8 - (count < 6 ? 12 : 0))
   );
   return (
-    <div className="skills-circle-wrapper">
-      <div className="skills-circle" style={{ width: circleSize, height: circleSize, position: "relative" }}>
+    <div className="skills-circle-wrapper" style={isMobile ? {overflow:'hidden'} : {}}>
+      <div className="skills-circle" style={{ width: circleSize, height: circleSize, position: "relative", overflow: isMobile ? 'hidden' : undefined }}>
         {/* Category title in the center */}
         <div className="skills-circle-title-center">{category}</div>
         {skills.map((skill, idx) => {
@@ -61,9 +65,9 @@ function SkillsCircle({ skills, category }) {
                 alt={skill}
                 title={skill}
                 className="skill-logo-img"
-                style={{ width: 56, height: 56, marginBottom: 4 }} // increased icon size
+                style={{ width: iconBox - 4, height: iconBox - 4, marginBottom: 2 }}
               />
-              <span className="skill-label skill-label-circle" style={{ fontSize: 20, textAlign: "center", wordBreak: "break-word", whiteSpace: "normal", lineHeight: 1.2, maxWidth: 110, overflowWrap: "break-word" }}>
+              <span className="skill-label skill-label-circle" style={{ fontSize: labelFont, textAlign: "center", wordBreak: "break-word", whiteSpace: "normal", lineHeight: 1.2, maxWidth: labelMaxWidth, overflowWrap: "break-word" }}>
                 {skill}
               </span>
             </div>
@@ -88,6 +92,27 @@ function SkillsCarousel({ categories }) {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  // Touch swipe logic for mobile
+  const touchStartX = React.useRef(null);
+  const touchEndX = React.useRef(null);
+
+  const minSwipeDistance = 40;
+
+  const onTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const onTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const distance = touchStartX.current - touchEndX.current;
+    if (distance > minSwipeDistance) next();
+    else if (distance < -minSwipeDistance) prev();
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   // Infinite carousel logic
   const prev = () => setIndex((i) => (i - cardsPerView + total) % total);
   const next = () => setIndex((i) => (i + cardsPerView) % total);
@@ -99,10 +124,17 @@ function SkillsCarousel({ categories }) {
   }
 
   return (
-    <div className="skills-carousel-container">
-      <button className="carousel-arrow left" onClick={prev} aria-label="Previous">
-        &#8592;
-      </button>
+    <div
+      className="skills-carousel-container"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
+      {window.innerWidth >= 600 && (
+        <button className="carousel-arrow left" onClick={prev} aria-label="Previous">
+          &#8592;
+        </button>
+      )}
       <div className="skills-carousel-track-multi">
         {visible.map((cat) => (
           <SkillsCircle
@@ -112,9 +144,11 @@ function SkillsCarousel({ categories }) {
           />
         ))}
       </div>
-      <button className="carousel-arrow right" onClick={next} aria-label="Next">
-        &#8594;
-      </button>
+      {window.innerWidth >= 600 && (
+        <button className="carousel-arrow right" onClick={next} aria-label="Next">
+          &#8594;
+        </button>
+      )}
     </div>
   );
 }

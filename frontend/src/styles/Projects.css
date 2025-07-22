@@ -740,3 +740,28 @@
 .projects-section, .projects-accordion, .accordion-title, .project-tech-chip, .project-card-desc, .accordion-header, .accordion-arrow {
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
+
+@media (max-width: 600px) {
+  .projects-accordion .accordion-title {
+    font-size: 1rem !important;
+  }
+  .projects-accordion .project-tech-chip {
+    font-size: 0.85em !important;
+    padding: 2px 7px !important;
+  }
+  .projects-accordion .accordion-header {
+    font-size: 1rem !important;
+    padding: 10px 8px !important;
+  }
+  .projects-accordion .accordion-content {
+    font-size: 0.98rem !important;
+    padding: 0 8px !important;
+  }
+  .projects-accordion .accordion-item.open .accordion-content {
+    padding: 8px 8px 12px 8px !important;
+  }
+  .projects-accordion .project-card-desc {
+    font-size: 0.98rem !important;
+    padding: 6px 8px 10px 8px !important;
+  }
+}
