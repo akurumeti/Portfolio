@@ -77,7 +77,7 @@ function SkillsCircle({ skills, category }) {
 
 function SkillsCarousel({ categories }) {
   // Responsive: 2 on desktop/tablet, 1 on mobile
-  const getCardsPerView = () => (window.innerWidth < 700 ? 1 : 2);
+  const getCardsPerView = () => (window.innerWidth < 700 ? 1 : 3);
   const [cardsPerView, setCardsPerView] = useState(getCardsPerView());
   const [index, setIndex] = useState(0);
   const total = categories.length;
