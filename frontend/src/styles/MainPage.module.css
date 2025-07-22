@@ -218,6 +218,38 @@ body, html, button, a, .menuItem, .shiny-underline-heading, .footer, .navMenu, .
     height: 32px;
     padding: 0 0.1rem;
   }
+  .menuBar {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    padding: 0.2rem 0 !important;
+    gap: 0 !important;
+    box-sizing: border-box;
+    overflow-x: visible !important;
+    white-space: normal !important;
+    background: linear-gradient(90deg, #22577A 30%, #16405f 70%) !important;
+  }
+  .menuShiny, .menuPipe {
+    display: block !important;
+    width: 100vw !important;
+    text-align: center !important;
+    padding: 0.7rem 0 !important;
+    font-size: 1.1rem !important;
+    margin: 0 !important;
+    border-bottom: 1px solid #79BAEC22;
+  }
+  .menuPipe {
+    border-bottom: none !important;
+    font-size: 1.2rem !important;
+    padding: 0.1rem 0 !important;
+  }
+  .menuShiny:last-child {
+    border-bottom: none !important;
+  }
 }
 @media (max-width: 400px) {
   .heading {
@@ -387,5 +419,13 @@ section h2 {
     text-align: center;
     right: auto;
     top: auto;
+  }
+  .menuPipe {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .menuPipe {
+    display: none !important;
   }
 }
