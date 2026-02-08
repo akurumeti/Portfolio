@@ -12,12 +12,17 @@
       ]
     },
     {
-      "name": "Java Technologies",
+      "name": "Frameworks",
       "skills": [
         "Spring Boot",
         "Spring MVC",
         "Hibernate",
-        "JDBC"
+        "JDBC",
+        "JPA",
+        "Cucumber",
+        "JUnit",
+        "Mockito",
+        "Node.js"
       ]
     },
     {
@@ -26,14 +31,39 @@
         "Oracle PL/SQL",
         "MySQL",
         "MongoDB",
-        "Cassandra"
+        "Cassandra",
+        "Redis"
       ]
     },
     {
-      "name": "Devops Tools",
+      "name": "Distributed Systems",
+      "skills": [
+        "REST",
+        "Apache Kafka",
+        "Event-Driven Architecture",
+        "Microservices"
+      ]
+    },
+    {
+      "name": "Monitoring & Observability",
+      "skills": [
+        "Prometheus",
+        "Grafana",
+        "Splunk"
+      ]
+    },
+    {
+      "name": "Development Tools",
       "skills": [
         "Docker",
-        "Kubernetes"
+        "Kubernetes",
+        "SonarQube",
+        "Git",
+        "Maven",
+        "Gradle",
+        "IntelliJ IDEA",
+        "GitHub Copilot",
+        "Postman"
       ]
     },
     {

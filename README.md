@@ -4,38 +4,123 @@ Welcome to my portfolio repository! This repository contains the source code for
 
 ## 🚀 Overview
 
-This portfolio website serves as a comprehensive display of my work, skills, and achievements. It's designed to give visitors a clear understanding of my capabilities and the projects I've worked on.
+This portfolio website serves as a comprehensive display of my work, skills, and achievements. It's a modern, interactive web application built with React and Vite, featuring smooth animations, responsive design, and an engaging user experience.
 
 ## 🛠️ Tech Stack
 
-[Will be updated as the project develops]
+**Frontend:**
+- React 18+
+- Vite (Build tool)
+- Framer Motion (Animations)
+- React Icons (Icon library)
+- CSS3 (Custom styling with gradients and animations)
+
+**Programming Languages & Technologies:**
+- Java, Python, Groovy, Scala, C++, C
+- Spring Boot, Spring MVC, Hibernate, JDBC, JPA
+- Node.js, Express
+- MySQL, Oracle, MongoDB, Cassandra, Redis
+- Docker, Kubernetes
+- Apache Kafka, REST APIs
+- Git, Maven, Gradle
 
 ## 🏗️ Project Structure
 
-[Will be updated as the project develops]
+```
+akurumeti-portfolio/
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── MainPage.jsx
+│   │   │   ├── Skills.jsx
+│   │   │   ├── Experience.jsx
+│   │   │   ├── Projects.jsx
+│   │   │   ├── Education.jsx
+│   │   │   └── Footer.jsx
+│   │   ├── styles/
+│   │   │   ├── MainPage.module.css
+│   │   │   ├── Skills.css
+│   │   │   ├── ExperienceCarousel.css
+│   │   │   ├── Projects.css
+│   │   │   └── ExperienceHeading.css
+│   │   ├── data/
+│   │   │   ├── skills.json
+│   │   │   ├── work_experience.json
+│   │   │   ├── projects.json
+│   │   │   └── education.json
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   └── eslint.config.js
+└── README.md
+```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-[Will be updated as the project develops]
+- Node.js (v14 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/akurumeti-portfolio.git
+cd akurumeti-portfolio/frontend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Build for Production
+
+```bash
+npm run build
+```
 
 ## 📝 Features
 
-- Professional introduction
-- Project showcase
-- Skills overview
-- Contact information
-- [More features to be added]
+- **Professional Introduction** - Engaging hero section with smooth animations
+- **Skills Showcase** - Interactive circular skill display organized by categories
+  - Dev Languages, Frameworks, Databases, Distributed Systems
+  - Monitoring & Observability, Development Tools, Operating Systems
+- **Work Experience** - Timeline-based experience display with detailed descriptions
+  - Senior Application Developer at ADP
+  - Specialist Programmer at Infosys
+- **Projects** - Accordion-style project showcase with technologies and descriptions
+  - SOS Emergency App (Fitbit IoT)
+  - Speech Processing and Analysis (Deep Learning)
+  - Anduno Sense - Wireless Sensor Hub (Arduino/IoT)
+- **Education** - Step-based education timeline
+  - Master of Science in Computer Science
+  - Bachelor of Technology in Electronics and Computer Engineering
+- **Responsive Design** - Fully responsive across desktop, tablet, and mobile devices
+- **Smooth Animations** - Framer Motion powered animations for engaging interactions
+- **Modern UI** - Gradient backgrounds, glass-morphism effects, and polished design
 
-## 🤝 Contributing
+## 🎨 Design Highlights
 
-While this is a personal portfolio, if you notice any bugs or have suggestions for improvements, feel free to open an issue.
+- Color scheme: Blue gradients (#1e3c78, #79BAEC) for a professional look
+- Smooth transitions and hover effects
+- Mobile-optimized carousel and accordion layouts
+- Semi-transparent backgrounds with shadow effects
+- Custom typography with letter spacing for elegance
 
 ## 📫 Contact
 
-[contact information will be added here]
-
+For inquiries or collaboration opportunities, please reach out through the contact section on the portfolio website.
 
 ---
-Last Updated: June 2025
+Last Updated: February 2026

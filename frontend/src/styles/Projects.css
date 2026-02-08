@@ -538,12 +538,23 @@
   gap: 32px;
   flex: 1;
 }
+.accordion-title-duration {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 .accordion-title {
   font-size: 1.18em;
   font-weight: 500;
   letter-spacing: 1px;
   color: #fff;
   text-shadow: 0 2px 8px #1e3c7844;
+}
+.project-duration {
+  font-size: 0.85em;
+  color: #79BAEC;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 .accordion-skills {
   display: flex;
@@ -742,19 +753,38 @@
 }
 
 @media (max-width: 600px) {
+  .projects-section {
+    padding: 16px 8px;
+  }
+  .projects-accordion {
+    max-width: 100%;
+    padding: 0 4px;
+  }
   .projects-accordion .accordion-title {
     font-size: 1rem !important;
+    word-break: break-word;
   }
   .projects-accordion .project-tech-chip {
-    font-size: 0.85em !important;
-    padding: 2px 7px !important;
+    font-size: 0.75em !important;
+    padding: 2px 6px !important;
   }
   .projects-accordion .accordion-header {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
     padding: 10px 8px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .projects-accordion .accordion-title-skills {
+    width: 100%;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .projects-accordion .accordion-skills {
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
   .projects-accordion .accordion-content {
-    font-size: 0.98rem !important;
+    font-size: 0.9rem !important;
     padding: 0 8px !important;
   }
   .projects-accordion .accordion-item.open .accordion-content {

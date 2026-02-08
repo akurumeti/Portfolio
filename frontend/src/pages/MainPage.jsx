@@ -4,8 +4,6 @@ import Experience from "./Experience";
 import Projects from "./Projects";
 import Education from "./Education";
 import Footer from "./Footer";
-import "../App.css";
-import styles from "../styles/MainPage.module.css";
 import mainPageImg from "../assets/main-page-img.png";
 import Skills from "./Skills";
 
@@ -38,46 +36,49 @@ const MainPage = () => {
   }, []);
 
   return (
-    <div className={styles.mainBg}>
+    <div style={{ width: '100%', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      {/* Navigation Menu */}
       <motion.div
-        className={styles.menuBar}
+        className="navbar"
         initial="hidden"
         animate="visible"
         variants={menuVariants}
       >
-        <a href="#experience" className={styles.menuShiny}>Experience</a>
-        <span className={styles.menuPipe}>|</span>
-        <a href="#skills" className={styles.menuShiny}>Skills</a>
-        <span className={styles.menuPipe}>|</span>
-        <a href="#projects" className={styles.menuShiny}>Projects</a>
-        <span className={styles.menuPipe}>|</span>
-        <a href="#education" className={styles.menuShiny}>Education</a>
+        <a href="#experience">Experience</a>
+        <span>|</span>
+        <a href="#skills">Skills</a>
+        <span>|</span>
+        <a href="#projects">Projects</a>
+        <span>|</span>
+        <a href="#education">Education</a>
       </motion.div>
+
+      {/* Hero Section */}
       <motion.div
-        className={styles.heroContainer}
+        className="hero"
         initial="hidden"
         animate="visible"
         variants={heroVariants}
       >
-        <div className={styles.rightHero}>
+        <div style={{ flexShrink: 0 }}>
           <img
             src={mainPageImg}
             alt="Man Coding Animation"
-            className={styles.codingImg}
+            style={{ width: '100%', maxWidth: '320px', height: 'auto' }}
           />
         </div>
-        <div className={styles.leftHero}>
+        <div className="hero-text">
           <motion.h1
-            className={styles.heading}
+            className="hero-name"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           >
             {typedName}
-            {!done && <span className={styles.cursor}>|</span>}
+            {!done && <span style={{ color: 'var(--primary)' }}>|</span>}
           </motion.h1>
           <motion.h2
-            className={styles.subheading}
+            className="hero-title"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
@@ -86,20 +87,24 @@ const MainPage = () => {
           </motion.h2>
         </div>
       </motion.div>
-      {/* Experience Section */}
-      <section id="experience">
+
+      {/* Sections */}
+      <section id="experience" style={{ width: '100%', padding: '32px 16px' }}>
         <Experience />
       </section>
 
-      <section id="skills">
+      <section id="skills" style={{ width: '100%', padding: '32px 16px' }}>
         <Skills />
       </section>
-      <section id="projects">
+
+      <section id="projects" style={{ width: '100%', padding: '32px 16px' }}>
         <Projects />
       </section>
-      <section id="education">
+
+      <section id="education" style={{ width: '100%', padding: '32px 16px' }}>
         <Education />
       </section>
+
       <Footer />
     </div>
   );

@@ -2,6 +2,7 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
+  word-wrap: break-word;
 }
 
 .shiny-underline-heading::after {
@@ -16,4 +17,16 @@
   background: linear-gradient(90deg, #79BAEC 0%, #1e3c72 100%);
   box-shadow: 0 0 12px 2px #79BAEC88;
   opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .shiny-underline-heading {
+    font-size: 1.8rem !important;
+    word-wrap: break-word;
+  }
+  .shiny-underline-heading::after {
+    width: 40%;
+    height: 3px;
+    bottom: -6px;
+  }
 }

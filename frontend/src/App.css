@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
 
-
-body {
+* {
   margin: 0;
-  height: auto;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
   font-family: 'Cormorant', serif;
   background: url('./assets/bg-img.png') no-repeat center center fixed;
   background-size: cover;
@@ -18,47 +24,190 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #root {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  text-align: center;
   display: flex;
   flex-direction: column;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Tailwind colors as CSS variables for manual use */
+:root {
+  --primary: #79BAEC;
+  --primary-dark: #1e3c78;
+  --bg-blue: #22577A;
+  --bg-light: #e0f2ff;
+  --bg-glass: rgba(30, 60, 120, 0.12);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(90deg, var(--bg-blue), var(--primary), var(--bg-blue));
+  box-shadow: 0 8px 36px 0 rgba(30,60,120,0.22), 0 2px 16px 0 rgba(121,186,236,0.18);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Baumans', cursive;
+  font-size: 18px;
+  padding: 12px 16px;
+  display: block;
+  border-bottom: 1px solid rgba(121, 186, 236, 0.2);
+  flex: 1;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--primary);
+}
+
+.navbar span {
+  color: var(--primary);
+  font-weight: bold;
+  padding: 12px 8px;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .navbar {
+    height: 64px;
+    flex-wrap: nowrap;
+    padding: 0 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar a {
+    flex: none;
+    width: auto;
+    text-align: left;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .navbar span {
+    display: block;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding-top: 128px;
+  padding-bottom: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  min-height: auto;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .hero {
+    flex-direction: row;
+    gap: 80px;
+    padding-top: 80px;
+    padding-bottom: 64px;
+    min-height: 90vh;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-.card {
-  padding: 2em;
+.hero img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  flex-shrink: 0;
 }
 
-.read-the-docs {
-  color: #888;
+@media (min-width: 640px) {
+  .hero img {
+    max-width: 640px;
+  }
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .hero-text {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.hero-name {
+  font-family: 'Baumans', cursive;
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 640px) {
+  .hero-name {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-name {
+    font-size: 64px;
+  }
+}
+
+.hero-title {
+  font-family: 'Cormorant', serif;
+  font-size: 24px;
+  font-weight: normal;
+  color: white;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 40px;
+  }
+}
+
+/* Sections */
+section {
+  width: 100%;
+  padding: 32px 16px;
+}
+
+@media (min-width: 640px) {
+  section {
+    padding: 64px 32px;
+  }
 }

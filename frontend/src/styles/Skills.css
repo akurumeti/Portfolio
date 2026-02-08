@@ -27,7 +27,7 @@
   min-height: clamp(260px, 28vw, 520px);
   max-width: 32vw;
   max-height: 38vw;
-  background: rgba(30, 60, 120, 0.12);
+  background: rgba(153, 167, 198, 0.35);
   border-radius: 24px;
   box-shadow: 0 8px 36px 0 rgba(30,60,120,0.22), 0 2px 16px 0 rgba(121,186,236,0.18);
   padding: clamp(16px, 2vw, 36px) clamp(8px, 1vw, 24px) clamp(24px, 2vw, 48px) clamp(8px, 1vw, 24px);
@@ -48,7 +48,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.45rem;
+  font-size: clamp(1rem, 3vw, 1.45rem);
   font-weight: 800;
   color: #79BAEC;
   text-align: center;
@@ -60,6 +60,7 @@
   border-radius: 0;
   box-shadow: none;
   letter-spacing: 1px;
+  max-width: 80%;
 }
 
 .skills-circle {
@@ -222,47 +223,80 @@
     max-width: 90vw;
     max-height: 90vw;
   }
+  .skills-circle-title-center {
+    font-size: 1.1rem;
+  }
 }
 @media (max-width: 600px) {
   .skills-section-circles,
   .skills-categories-circles-container {
     flex-direction: column !important;
     align-items: center !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    padding: 0 !important;
-    gap: 10px !important;
-    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px 4px !important;
+    gap: 12px !important;
+    margin: 0 !important;
     box-sizing: border-box;
   }
   .skills-circle-wrapper {
-    min-width: 80vw !important;
-    max-width: 82vw !important;
-    width: 82vw !important;
+    min-width: 88vw !important;
+    max-width: 88vw !important;
+    width: 88vw !important;
     margin: 0 auto 8px auto !important;
-    padding: 4px 2px 8px 2px !important;
-    border-radius: 14px !important;
+    padding: 6px !important;
+    border-radius: 12px !important;
     overflow: hidden !important;
+    min-height: auto !important;
+    box-shadow: 0 4px 20px 0 rgba(30,60,120,0.18) !important;
   }
   .skills-circle {
-    width: 72vw !important;
-    height: 72vw !important;
-    min-width: 72vw !important;
-    min-height: 72vw !important;
-    max-width: 82vw !important;
-    max-height: 82vw !important;
+    width: 78vw !important;
+    height: 78vw !important;
+    min-width: 78vw !important;
+    min-height: 78vw !important;
+    max-width: 88vw !important;
+    max-height: 88vw !important;
     margin: 0 auto !important;
     overflow: hidden !important;
   }
   .skill-logo-img {
-    width: 28px !important;
-    height: 28px !important;
+    width: 22px !important;
+    height: 22px !important;
+    margin-bottom: 1px !important;
   }
   .skill-label.skill-label-circle {
-    font-size: 0.8rem !important;
-    max-width: 180px !important;
+    font-size: 0.65rem !important;
+    max-width: 140px !important;
+    line-height: 1.1 !important;
+  }
+  .skills-circle-title-center {
+    font-size: 1rem !important;
   }
   .carousel-arrow {
     display: none !important;
+  }
+  .skills-carousel-container {
+    padding: 0 4px;
+    gap: 8px;
+  }
+}
+@media (max-width: 400px) {
+  .skills-circle-wrapper {
+    min-width: 92vw !important;
+    max-width: 92vw !important;
+    padding: 4px !important;
+  }
+  .skills-circle {
+    width: 82vw !important;
+    height: 82vw !important;
+    min-width: 82vw !important;
+    min-height: 82vw !important;
+  }
+  .skills-circle-title-center {
+    font-size: 0.9rem !important;
+  }
+  .skill-label.skill-label-circle {
+    font-size: 0.6rem !important;
   }
 }

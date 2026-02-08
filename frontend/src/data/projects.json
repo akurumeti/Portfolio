@@ -2,31 +2,34 @@
   "projects": [
     {
       "title": "SOS Emergency App",
+      "duration": "August 2021 - December 2021",
       "technologies": ["Fitbit Studio", "JavaScript", "Node.js", "GPS", "Versa 3"],
       "description": [
         "Developed and launched an SOS emergency feature on Fitbit that instantly notifies preset contacts with real-time user coordinates using GPS in 1 to 1.5 seconds.",
-        "Created a location-tracking feature for Versa 3 using JavaScript in Fitbit Studio, interfacing with a Node.js backend.",
-        "Designed and deployed a Node.js server to process data and trigger emergency alerts to predefined contacts."
+        "Developed a location-tracking feature for Versa 3 using JavaScript in Fitbit Studio, connecting to mobile devices and sending real-time coordinates to a NodeJS backend server.",
+        "Designed and deployed a NodeJS server to interface with Fitbit devices, processing data and triggering emergency messages to pre-defined contacts."
       ],
       "links": {}
     },
     {
       "title": "Speech Processing and Analysis",
+      "duration": "August 2021 - December 2021",
       "technologies": ["Python", "Deep Neural Networks", "Signal Processing"],
       "description": [
-        "Built a Deep Neural Network classifier to analyze speech data for Gender Identification (78%) and Speaker Recognition (45%).",
-        "Implemented a real-time voice activity detection system with signal processing techniques to reduce false detections by 25%.",
-        "Enhanced speech recognition by 30% through feature extraction and noise reduction algorithms."
+        "Developed a Deep Neural Network using the classification algorithm to analyze speech data for Gender Identification (78%) and Speaker Recognition (45%) through data processing and visualization.",
+        "Engineered a speech processing pipeline that incorporated feature extraction techniques and noise reduction algorithms, achieving a 30% improvement in speech recognition accuracy.",
+        "Implemented a real-time voice activity detection system utilizing signal processing techniques, which reduced false detections by 25% and enhanced overall system reliability."
       ],
       "links": {}
     },
     {
       "title": "Anduno Sense - Wireless Sensor Hub",
+      "duration": "January 2015 - June 2015",
       "technologies": ["Arduino", "Java", "Bluetooth", "AGPS", "Android"],
       "description": [
-        "Automated control of electronic components via Android app using Bluetooth, light sensors, and AGPS on an Arduino board.",
-        "Developed a wireless sensor hub (Anduno Sense) with real-time control through an Android application.",
-        "Created a user-friendly app compatible with Android OS 2.2+ for managing connected sensors."
+        "Automated electronic component control through an Android app interfaced with light sensors and AGPS using Bluetooth on an Arduino board, optimizing automation effectiveness.",
+        "Developed Anduno Sense – a wireless sensor hub integrating light sensors, AGPS, and Bluetooth, seamlessly controlled via an Android app, which enhanced automation efficiency and reduced manual intervention by 40%.",
+        "Created an application for Android OS 2.2 and above for managing devices connected to Anduno Sense using Java, resulting in a user-friendly interface."
       ],
       "links": {}
     }

@@ -18,6 +18,7 @@
     "@fontsource/carattere": "^5.2.6",
     "@fontsource/electrolize": "^5.2.6",
     "@mui/material": "^7.1.2",
+    "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/vite": "^4.1.11",
     "framer-motion": "^12.19.2",
     "react": "^19.1.0",
